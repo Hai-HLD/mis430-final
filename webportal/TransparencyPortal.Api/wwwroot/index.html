@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transparency Portal — Submit an inquiry</title>
+  <meta name="description" content="Public transparency portal: submit an inquiry about how automated and AI-supported systems affect what you see, and follow the conversation with support." />
+  <link rel="stylesheet" href="css/user.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Public transparency portal</p>
+      <h1>Transparency &amp; support</h1>
+      <p class="lede">
+        Explore how automated and AI-supported systems can affect access, prioritization, and what you see. Submit an inquiry below for review.
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section id="form-panel" class="panel">
+      <h2>Submit an inquiry</h2>
+      <p id="form-intro" class="intro">
+        Fields marked <span class="req" aria-hidden="true">*</span> are required.
+      </p>
+
+      <form id="ticket-form" novalidate>
+        <div class="field">
+          <label for="category">Category <span class="req" aria-hidden="true">*</span></label>
+          <select id="category" name="category" required>
+            <option value="">— Select —</option>
+            <option value="transparency">Transparency &amp; policy</option>
+            <option value="ranking">Ranking, search &amp; prioritization</option>
+            <option value="account">Account access</option>
+            <option value="billing">Billing</option>
+            <option value="feedback">Feedback</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="subject" name="subject" maxlength="200" required autocomplete="off" placeholder="Short summary of your inquiry" />
+        </div>
+
+        <div class="field">
+          <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="6" maxlength="8000" required placeholder="Describe your question or concern. Avoid sharing passwords, full account numbers, or payment card details."></textarea>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="contact-name">Your name <span class="optional">(optional)</span></label>
+            <input type="text" id="contact-name" name="contactName" maxlength="120" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="contact-email">Email <span class="optional">(optional)</span></label>
+            <input type="email" id="contact-email" name="contactEmail" maxlength="200" autocomplete="email" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn primary" id="submit-btn">Submit inquiry</button>
+      </form>
+    </section>
+
+    <section id="ticket-detail-panel" class="panel ticket-detail" hidden>
+      <div id="ticket-not-found" class="ticket-not-found" hidden>
+        <h2>Ticket not found</h2>
+        <p class="hint">We couldn’t find an inquiry with ticket ID <strong id="not-found-id"></strong>.</p>
+        <p><a href="#" class="link" id="link-not-found-home">Back to inquiries</a></p>
+      </div>
+
+      <div id="ticket-detail-content" class="ticket-detail-content" hidden>
+        <div class="ticket-detail-header">
+          <h2 class="detail-title">
+            Ticket <span class="ref-id detail-ref" id="detail-ticket-id"></span>
+          </h2>
+          <p class="ticket-subject-line" id="detail-subject"></p>
+          <p class="ticket-meta-line">
+            <span id="detail-category"></span>
+            <span class="ticket-meta-sep" aria-hidden="true"> · </span>
+            Opened <time id="detail-created"></time>
+          </p>
+          <p class="ticket-contact-line" id="detail-contact-line" hidden></p>
+        </div>
+
+        <p id="ticket-detail-flash" class="detail-flash" hidden role="status"></p>
+
+        <div class="conversation" id="conversation-thread" aria-live="polite" aria-relevant="additions"></div>
+
+        <form id="followup-form" class="followup-form" novalidate>
+          <label for="followup-message">Your follow-up</label>
+          <textarea
+            id="followup-message"
+            name="followupMessage"
+            rows="4"
+            maxlength="8000"
+            placeholder="Add another message to this conversation."
+          ></textarea>
+          <button type="submit" class="btn primary" id="btn-followup-send">Send follow-up</button>
+        </form>
+
+        <p class="detail-actions">
+          <button type="button" class="btn ghost" id="btn-ticket-back">Back to inquiries</button>
+          <button type="button" class="btn ghost" id="btn-ticket-another">Submit another inquiry</button>
+        </p>
+      </div>
+    </section>
+
+    <section id="history-panel" class="panel history" hidden>
+      <h2>Your recent inquiries</h2>
+      <p class="history-note">Select a ticket to view the conversation with support.</p>
+      <ul id="ticket-history" class="ticket-history"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-note">Transparency Portal — public transparency and support.</p>
+    </div>
+  </footer>
+
+  <script src="js/user.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home — Transparency Portal</title>
+  <meta name="description" content="Transparency Portal home: submit inquiries and view conversations." />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="app-topbar">
+    <div class="wrap app-topbar-inner">
+      <span class="app-topbar-brand">Transparency Portal</span>
+      <div class="app-topbar-actions">
+        <button type="button" class="btn btn-topbar" id="home-logout">Log out</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="home-header">
+    <div class="wrap">
+      <p class="eyebrow">Welcome</p>
+      <h1>Hello, <span id="home-username">User</span></h1>
+      <p class="lede">
+        You’re signed in. Submit a new inquiry or open the portal to manage your tickets and conversations.
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap home-main">
+    <section class="panel home-card">
+      <h2>Submit an inquiry</h2>
+      <p class="home-card-text">
+        Ask about transparency, ranking, account access, and more. You’ll get a ticket ID and can follow the thread with support.
+      </p>
+      <p><a class="btn primary home-cta" href="index.html">Open inquiry portal</a></p>
+    </section>
+
+    <section class="panel home-card home-card-muted">
+      <h2>Quick tips</h2>
+      <ul class="home-tips">
+        <li>Use a clear subject line so you can find the ticket in your recent list.</li>
+        <li>Follow-ups appear in the same conversation as your original message.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="home-footer">
+    <div class="wrap">
+      <p>Transparency Portal — public transparency and support.</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/home.js" defer></script>
+</body>
+</html>

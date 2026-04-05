@@ -386,4 +386,11 @@
   });
 
   route();
+
+  var navLogout = document.getElementById("nav-logout");
+  if (navLogout && typeof TPAuth !== "undefined") {
+    navLogout.addEventListener("click", function () {
+      TPAuth.logout();
+    });
+  }
 })();
